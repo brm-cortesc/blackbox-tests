@@ -8,12 +8,9 @@ $(document).ready(function(){
 
  	rules: {
 	       nombre:            {required: true }, 
-	       email:             {required: true,
-	       						email: true},  
+	       email:             {required: true, email: true},  
 	       password:           "required",
 	       Cpass: {equalTo: "#password"}
-
-
 	       },
 
 
