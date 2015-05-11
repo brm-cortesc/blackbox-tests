@@ -21,38 +21,39 @@
   <div class="container-fluid">
     <section>
       <!--Registro-->
-      <form id="Registro" action="post">
+      <form id="Registro" action="">
         <div class="row">
           <!--Datos-->
           <div class="col-md-6 col-xs-12">
             <!--Nombres-->
             <div class="form-group">
-              <input type="text" id="name" placeholder="Nombre Completo" class="form-control">
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio</span></div>
+              <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" class="form-control">
+              <div class="error hidden"></div>
             </div>
             <!--Password-->
             <div class="form-group">
-              <input type="password" id="pass" placeholder="Contraseña" class="form-control">
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio</span></div>
+              <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control">
+              <div class="error"></div>
             </div>
           </div>
           <div class="col-md-6 col-xs-12">
             <!--Email-->
             <div class="form-group">
-              <input type="email" id="email" placeholder="Email" class="form-control">
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio</span></div>
+              <input type="email" id="email" name="email" placeholder="Email" class="form-control">
+              <div class="error hidden"></div>
             </div>
             <!--Password-->
             <div class="form-group">
-              <input type="password" id="Cpass" placeholder="Confirmar Contraseña" class="form-control">
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio					</span></div>
+              <input type="password" id="Cpass" name="Cpass" placeholder="Confirmar Contraseña" class="form-control">
+              <div class="error hidden"></div>
             </div>
           </div>
         </div>
-        <button type="submit" id="Btnregistro">Votar </button>
+        <button type="submit" id="Btnregistro">Registrar </button>
       </form>
       <!--/-Registro-->
     </section>
   </div>
-  <script src="js/validaForm.js"></script>
+  <script src="js/libs/jquery.validate.js"></script>
+  <script src="js/validarForm.js"></script>
 </body></html>

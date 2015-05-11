@@ -11,7 +11,7 @@ block content
 	div.container-fluid
 		section
 			//Registro
-			form#Registro(action="post")
+			form#Registro(action="")
 
 				div.row
 					//Datos
@@ -19,32 +19,33 @@ block content
 						
 						//Nombres
 						div.form-group
-							input(type="text" class="form-control" id="name" placeholder="Nombre Completo")
+							input(type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre Completo")
 							div.error.hidden
-								span.mensaje-error Este campo es obligatorio
+								
 
 						//Password
 						div.form-group
-							input(type="password" class="form-control" id="pass" placeholder="Contraseña")
-							div.error.hidden
-								span.mensaje-error Este campo es obligatorio
+							input(type="password" class="form-control" id="password" name="password" placeholder="Contraseña")
+							div.error
+								
 
 					div.col-md-6.col-xs-12
 						//Email
 						div.form-group
-							input(type="email" class="form-control" id="email" placeholder="Email")
+							input(type="email" class="form-control" id="email" name="email" placeholder="Email")
 							div.error.hidden
-								span.mensaje-error Este campo es obligatorio
+								
 						
 						//Password
 						div.form-group
-							input(type="password" class="form-control" id="Cpass" placeholder="Confirmar Contraseña")
+							input(type="password" class="form-control" id="Cpass" name="Cpass" placeholder="Confirmar Contraseña")
 							div.error.hidden
-								span.mensaje-error Este campo es obligatorio					
+													
 					
 
-				button(type="submit" id="Btnregistro") Votar 
+				button(type="submit" id="Btnregistro") Registrar 
 			
 			///-Registro
 block Scripts
-	script(src='js/validaForm.js')
+	script(src='js/libs/jquery.validate.js')
+	script(src='js/validarForm.js')

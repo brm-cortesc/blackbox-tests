@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 		stylus: {
 			options:{
 				 banner: '<%= banner %>', 
-				compress: false,//Minifica el css
+				compress: true,//Minifica el css
 			},
 			compile: {
 				files: {
