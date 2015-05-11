@@ -1,0 +1,170 @@
+//-Layout Base
+extends layout/base.jade
+
+//-Etiqueta Title
+block title
+	title Registro largo
+
+block content
+	//Contenido
+
+	div.container-fluid
+		section
+			//Registro
+			form#Registro(action="post")
+				div.row
+					//Datos
+					div.col-md-6.col-xs-12
+						h3.datos-title Tus Datos
+						
+						//Nombres
+						div.form-group
+							input(type="text" class="form-control" id="name" placeholder="Nombre Completo")
+							div.line
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio
+
+						//Fecha de Nacimiento
+						div.form-group(class="fechaNacimiento")
+							span Fecha de Nacimiento
+							div.row
+								//- div.col-md-3.col-xs-3 <span>Fecha de Nacimiento</span>
+								div.col-md-4.col-xs-4
+									select(class="form-control")
+										option(value="") DD
+										option(value=" ") 01
+										option(value=" ") 02
+										option(value="otro") 03
+
+								div.col-md-4.col-xs-4
+									select(class="form-control")
+										option(value="") MM
+										option(value=" ") 01
+										option(value=" ") 02
+										option(value="otro") 03
+
+								div.col-md-4.col-xs-4
+									select(class="form-control")
+										option(value="") AAAA
+										option(value=" ") 01
+										option(value=" ") 02
+										option(value="otro") 03
+
+							div.line
+
+							
+
+
+						//Tarjeta de identidad
+						div.form-group
+							input(type="text" class="form-control" id="tarjetaID" placeholder="Tarjeta de identidad")
+							div.line
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio
+
+						//Email
+						div.form-group
+							input(type="email" class="form-control" id="email" placeholder="Email")
+							div.line
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio
+
+						//Colegio
+						div.form-group
+							select(class="form-control")
+								option(value="") ¿De cuál colegio eres?
+								option(value=" ") País 1
+								option(value=" ") País 2
+								option(value="otro") Otro
+							div.line
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio
+
+						//Otro Colegio
+						div.form-group.hidden
+							input(type="text" class="form-control" id="tarjetaID" placeholder="¿Cuál?")
+							div.line
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio
+
+
+						//Voto Colegio
+						div.form-group
+							select(class="form-control")
+								option(value="") ¿Por cuál colegio votas?
+								option(value=" ") País 1
+								option(value=" ") País 2
+								option(value="otro") Otro
+							div.line
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio
+
+
+					//Datos acudiente
+					div.col-md-6.col-xs-12
+						h3.acudiente-title Datos de tu acudiente
+							
+
+						//Nombres
+						div.form-group
+							input(type="text" class="form-control" id="name" placeholder="Nombre Completo")
+							div.line
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio
+
+						//Parentesco
+						div.form-group
+							input(type="text" class="form-control" id="tarjetaID" placeholder="Parentesco")
+							div.line
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio
+
+						//Cedula
+						div.form-group
+							input(type="text" class="form-control" id="tarjetaID" placeholder="Cédula")
+							div.line
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio
+
+						//Email
+						div.form-group
+							input(type="email" class="form-control" id="email" placeholder="Email")
+							div.line
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio
+
+						//Ciudad
+						div.form-group
+							select(class="form-control")
+								option(value="") Ciudad
+								option(value=" ") Ciudad 1
+								option(value=" ") Ciudad 2
+							div.line
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio
+						
+						//Acepta terminos
+						div.checkbox
+							input(type="checkbox", id="terminos" name="terminos" )
+							//- <input type="checkbox" id="terminos" />
+							label(for="terminos").
+								Leo y acepto los <a  data-toggle="modal" data-target="#myModal">términos y condiciones</a>
+							div.error.hidden
+								span.mensaje-error Debes aceptar los términos y condiciones
+
+						//Privacidad
+						div.checkbox
+							input(type="checkbox", id="privacidad" name="privacidad" )
+							//- span.glyphicon.glyphicon-ok <input type="checkbox" id="privacidad" />
+							label(for="privacidad").
+								Leo y acepto <a data-toggle="modal" data-target="#ModalPrivacidad">Aviso de privacidad</a>
+
+							div.error.hidden
+								span.mensaje-error Debes aceptar el aviso de privacidad
+
+
+					
+
+				button(type="submit" id="Btnregistro") Votar 
+			
+			///-Registro

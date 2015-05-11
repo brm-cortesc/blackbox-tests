@@ -1,0 +1,50 @@
+//-Layout Base
+extends layout/base.jade
+
+//-Etiqueta Title
+block title
+	title Registro corto
+
+block content
+	//Contenido
+
+	div.container-fluid
+		section
+			//Registro
+			form#Registro(action="post")
+
+				div.row
+					//Datos
+					div.col-md-6.col-xs-12
+						
+						//Nombres
+						div.form-group
+							input(type="text" class="form-control" id="name" placeholder="Nombre Completo")
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio
+
+						//Password
+						div.form-group
+							input(type="password" class="form-control" id="pass" placeholder="Contraseña")
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio
+
+					div.col-md-6.col-xs-12
+						//Email
+						div.form-group
+							input(type="email" class="form-control" id="email" placeholder="Email")
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio
+						
+						//Password
+						div.form-group
+							input(type="password" class="form-control" id="Cpass" placeholder="Confirmar Contraseña")
+							div.error.hidden
+								span.mensaje-error Este campo es obligatorio					
+					
+
+				button(type="submit" id="Btnregistro") Votar 
+			
+			///-Registro
+block Scripts
+	script(src='js/validaForm.js')

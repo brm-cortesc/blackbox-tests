@@ -1,0 +1,53 @@
+<script>
+	//Funciones para el video desde YouTube
+
+	//Cargamos de forma async
+
+	var tag = document.createElement('script');
+
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+	//Creamos el objeto <iframe>
+
+	var player;
+	function onYouTubeIframeAPIReady() {
+	  player = new YT.Player(
+	  	'video', //ID del objeto donde se carga
+	  		{//Parametros del iframe
+	  			height: '410',
+  			    width: '750',
+			    videoId: 'T_9fPsJ9-oU',
+			    events: {
+			      'onReady': onPlayerReady,
+			      'onStateChange': onPlayerStateChange
+			}
+	  });
+	};
+
+	//La API carga el video cuando está listo
+	function onPlayerReady(event) {
+	  event.target.stopVideo();
+	};
+
+	///la API llama esta funcion cuando el player cambia de estado
+	////esta funcion indica que cuando está reproduciendo debe correr por 6 segundos y luego parar
+
+	var done = false;
+	function onPlayerStateChange(event) {
+	  if (event.data == YT.PlayerState.PLAYING && !done) {
+	    console.log("hola")
+	    // done = true;
+
+	  }
+	  //Revisamos si el video terminó
+	  if ( event.data == YT.PlayerState.ENDED && !done )
+	  {
+	  	console.log("terminó");
+	  	// window.location("index.html")
+	  	done = true;
+	  }
+	};
+</script>

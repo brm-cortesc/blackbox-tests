@@ -1,0 +1,544 @@
+//Colores
+Amarillo   = #fab721
+Azul       = #0080c8
+AzulOscuro = #213872
+Purpura    = #951d78
+
+//gradients
+btnGradient = linear-gradient(to bottom, #bee2e9 7%,#004e99 100%)
+
+//Imports
+@import 'nib/vendor'
+@import 'nib/gradients'
+// @import 'font'
+vendor-prefixes = o ms webkit moz official
+
+//Font
+Roboto = 'Roboto Condensed', arial, sans-serif
+
+//Font weights
+Light  = 300
+Normal = 400
+Bold   = 700
+
+//path images
+pathIMG(img)
+	background-image url("../images/"+img)
+
+a
+	color Amarillo
+	text-transform none
+	
+	img
+		border 0 !important
+
+
+//Etiquetas Nativas
+body
+	background-color Azul
+	pathIMG("bg.png")
+	color AzulOscuro
+	font-size 1em/16px
+	font-family Roboto
+
+footer
+	.img-responsive
+		margin 0 auto
+		margin-bottom 1.5em
+		
+	span
+		font-size 0.9em
+
+//Ids
+#compartir
+	padding-top 1em
+	
+	button
+		background transparent
+		border 0px
+		color Purpura
+		display block
+		font-size 2.8em
+		font-weight Light
+		margin 0.5em auto
+		text-align left
+		text-transform uppercase
+		transition all ease-in-out 0.3s
+		width 10em
+		
+		span
+			display inline-block
+			vertical-align middle
+		
+		.social-icon
+			pathIMG("social-icons.png")
+			background-repeat no-repeat
+			background-size 100%
+			margin-right 0.5em
+			display inline-block
+			height 74px
+			width @height
+			
+		.fb
+			background-position bottom
+		
+		&:hover, &:focus, &:active
+			outline 0
+			transform scale(1.2)
+			
+
+
+#pais
+	// width 30%
+	select
+		appareance none !important
+		background-color transparent
+		border 0px solid transparent
+		box-shadow none
+		color AzulOscuro !important
+		
+		&:hover, &:active, &:focus
+			outline 0
+			
+#participar, #Btnregistro, .volverHome, .btn-vid-registro, .btn-vid-replay 
+	background-color Azul
+	border 3px solid #fff
+	border-radius 0.2em
+	color Amarillo
+	display block
+	font-size 2.5em
+	margin 0 auto
+	padding 0.5em 1.8em
+	text-transform uppercase
+	transition all ease-in-out 0.3s 
+	
+	&:active, &:focus, &:hover
+		outline 0 !important
+		color #fff
+		box-shadow 0 0 5px 5px rgba(AzulOscuro, 0.25), inset 0 0 5px 5px rgba(AzulOscuro, 0.25)
+		background-color rgba(Azul, 0.5)
+
+#Registro
+	
+	input, select, label
+		background-color transparent
+		border none
+		box-shadow none
+		color #fff
+		font-size 1.4em
+		
+		&::-webkit-input-placeholder
+			color #fff 
+		&::-moz-placeholder
+			color #fff 
+		&:-ms-input-placeholder
+			color #fff 
+		&:-moz-placeholder
+			color #fff
+			
+	input
+		padding-left 0.1em
+			
+	select
+		padding 0 0 5px 0px
+			
+	.acudiente-title, .datos-title
+		font-size 2.7em
+		font-weight Normal
+		margin-top 0.4em
+		text-transform uppercase
+		
+	.checkbox
+		margin-left -0.8em
+		overflow hidden
+		
+		label
+			&:before
+				content "\e157"
+				color Amarillo
+				display inline-block
+				font-family 'Glyphicons Halflings'
+				font-smoothing antialiased
+				font-style normal
+				font-weight 400
+				line-height 1
+				padding-right 1em
+				width 39px
+				
+			&:active, &:focus
+				
+				&:before
+					content "\e013"				
+				
+
+
+		// input[type="checkbox"]
+		// 	display block
+		
+		input[type=checkbox]:checked + label:before
+			content "\e013" !important
+			
+		label
+			height 2.9em
+		
+		label.error
+			color #a94442
+			left 0em
+			font-size 1em !important
+			position absolute
+			top 1.9em
+			
+	.pintaCheck
+		&:before
+			content "\e013" !important
+	
+	label.error
+		position relative
+		z-index 2
+		top -0.1em
+		span
+			color #a94442
+			font-weight 400
+			font-size 0.9em 
+	
+	.fechaNacimiento
+		
+		span
+			color Purpura
+			font-size 1.4em
+			// margin-left 0.7em
+			
+		label.error
+			span
+				color #a94442
+				font-weight 400
+				font-size 0.9em 
+			
+		.row
+			padding 0.7em 0 !important
+
+	.form-group
+		
+		&:hover, &:focus, &:active
+
+			.line
+				border-color Purpura
+				width 100%
+	
+	.globo-icon
+		float right
+		margin-right 2em
+		margin-top 1em		
+		position absolute
+		right 0
+		z-index 4
+
+	.line
+		border 1px solid #fff
+		height 1px
+		transition all ease-in-out 1s
+		width 0%
+	
+		
+
+#registro-footer
+
+	#btn-registro-footer
+		background btnGradient 
+		border 0px
+		border-radius 0px 5px 5px 0px
+		display inline-block
+		height 34px
+		transition all ease-in-out 0.3s
+		vertical-align middle
+		width 10%
+		
+		&:hover, &:active, &:focus
+			background linear-gradient(to bottom, #004e99 0%,#bee2e9 93%)
+			outline 0
+		
+	.form-control
+		border-radius 5px 0 0 5px
+
+#search
+
+	#btn-buscar
+		background btnGradient 
+		border 0px
+		border-radius 0px 5px 5px 0px
+		display inline-block
+		height 34px
+		transition all ease-in-out 0.3s
+		vertical-align middle
+		max-width 25%
+		
+		&:hover, &:active, &:focus
+			background linear-gradient(to bottom, #004e99 0%,#bee2e9 93%)
+			outline 0
+				
+	.form-group
+		margin-right -0.1em
+		width 70%
+		
+		.form-control
+			border-radius 5px 0 0 5px
+			width 100%
+
+#video
+	left 10%
+	height 80%
+	top 19%
+	transition all ease-in-out 0.3s
+	width @height		
+
+#voto
+	margin 0 auto
+	
+	.confirmacion
+		color Amarillo
+		font-size 3.2em
+		text-align center
+						
+		.nombre-colegio
+			color #fff
+			display block
+	
+	.volverHome
+		border 3px solid #fff
+		color Amarillo
+		display block
+		font-size 1.6em
+		margin 0 auto
+		margin-top 1.7em
+		max-width 60%
+		padding 0.5em 1em
+		text-transform uppercase
+		
+		.home-icon
+			pathIMG("home.png")
+			background-position bottom
+			background-repeat no-repeat
+			background-size 100%
+			display inline-block
+			height 30px
+			margin-right 0.5em
+			vertical-align middle
+			width @height
+		
+		&:hover, &:active, &:focus
+			outline 0
+			
+			.home-icon
+				background-position top
+
+//Clases
+.banner
+	pathIMG("bg-sketches.png")
+	background-position center top
+	background-repeat no-repeat
+	height 50em
+	margin-top 3em !important
+	width 100%
+	
+	img
+		margin 0 auto
+		
+	.pasos
+		margin-top 10em
+
+.bg-cuaderno
+	pathIMG("bg-papel.png")
+	background-position center top
+	background-repeat repeat-y
+	background-size 100%
+	box-shadow 0 0 5px 5px rgba(0,0,0, 0.25)
+	margin-bottom 4em
+	margin-top @margin-bottom
+	
+	.row
+		padding 1em 5em
+
+.btn-info
+	width 100%
+
+.contenedor
+	position relative
+	z-index 0
+	
+	img
+		// background-color rgba(0,0,0,0.5)
+		margin-top 10em
+
+.error
+	margin-left 0.4em
+	.mensaje-error
+		color #a94442
+		font-weight Bold
+	
+.globo-icon
+		pathIMG("icon-bubbles.png")
+		background-repeat no-repeat
+		background-size 100%
+		display inline-block
+		vertical-align middle
+		margin-left 0.3em
+		height 80px
+		width 85px
+
+.copa
+	background-position bottom
+
+.compartir
+	background-position center
+
+.header
+	pathIMG("bg-header.jpg")
+	background-position center top
+	background-repeat repeat-x
+	padding 1.5em
+
+.menu
+	background linear-gradient(to right, #1b1e3b 0%,#0a528e 66%)
+	border-radius 0.2em
+	width 80em
+	// padding-bottom 0.5em
+	// padding-top @padding-bottom
+	
+	.row
+		.navbar-default
+			background-color transparent
+			border 0px
+			border-color transparent
+			margin 0 auto
+			
+		.navbar-nav
+			// float none !important
+			margin 0 auto
+			margin-left -2em
+			max-width 60em
+			padding-bottom 0.1em
+			padding-top @padding-bottom
+			
+			li				
+				a
+					color #fff
+			
+			.active
+				background-color transparent
+				
+				a
+					background-color transparent
+					color Amarillo
+					
+			.home
+				pathIMG("home.png")
+				background-position top
+				margin-top 2em
+				height 36px
+				width @height
+				zoom 0.5
+				
+				span 
+					display none
+				
+				&:hover
+					background-position bottom
+					
+			.open
+				a
+					background-color transparent
+					color Amarillo
+
+.modal
+	
+	.modal-body
+		max-height 700px
+		
+.modal-open .modal
+	overflow-x hidden
+	overflow-y auto
+	
+.ranking-title
+	margin 0 auto
+	text-align center
+	font-size 4em
+	text-transform uppercase
+
+.play
+	background transparent
+	border 0
+	cursor pointer
+	left 45%
+	margin 0 auto
+	position absolute
+	top 45%
+	transition all -0.1s ease-in-out 0.3s
+	width 13%
+	z-index 2
+	
+	#rayon //3659
+		animation rayar 2s ease alternate infinite
+		animation-play-state paused
+		stroke-dasharray 3659
+		stroke-dashoffset 3659
+		
+		
+	&:hover, &:focus, &:active
+		outline 0
+		
+		#rayon
+			animation-play-state running !important
+			
+	// &:hover, &:focus, &:active
+	
+.row
+	max-width 82em
+	margin 0 auto
+
+.btn-vid-registro, .btn-vid-replay
+	cursor pointer
+	left 35%
+	position absolute
+	opacity 0
+	top 40%
+	transition all ease-in-out 0.3s
+	z-index 2
+	
+.btn-vid-registro
+	&:hover
+		text-decoration none
+
+.btn-vid-replay
+	padding 0.5em 1.1em
+	top 65%
+
+.table
+	margin-top 0.6em
+	td
+		border none !important
+		font-size 1.9em
+		
+	.cabezote
+		th
+			h4
+				pathIMG("subrayado.png")
+				background-position bottom
+				background-repeat repeat-x
+				color Amarillo
+				font-size 3em
+				font-weight Light
+				padding-bottom 13px
+				text-align center
+				width 30%		
+
+.videoApagado
+	opacity 0.5 !important
+	z-index -53 !important
+
+.white
+	background-color #fff
+	padding 1em 0
+
+@import "animations"
+@import "keyframes"
+@import "media-queries"
