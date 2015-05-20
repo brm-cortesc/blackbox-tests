@@ -24,136 +24,76 @@
       <form id="Registro" action="post">
         <div class="row">
           <!--Datos-->
-          <div class="col-md-6 col-xs-12">
-            <h3 class="datos-title">Tus Datos</h3>
+          <div class="col-md-12 col-xs-12">
             <!--Nombres-->
             <div class="form-group">
-              <input type="text" id="name" placeholder="Nombre Completo" class="form-control">
-              <div class="line"></div>
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio</span></div>
+              <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" class="form-control">
             </div>
-            <!--Fecha de Nacimiento-->
-            <div class="form-group fechaNacimiento"><span>Fecha de Nacimiento</span>
-              <div class="row">
-                <div class="col-md-4 col-xs-4">
-                  <select class="form-control">
-                    <option value="">DD</option>
-                    <option value=" ">01</option>
-                    <option value=" ">02</option>
-                    <option value="otro">03</option>
-                  </select>
-                </div>
-                <div class="col-md-4 col-xs-4">
-                  <select class="form-control">
-                    <option value="">MM</option>
-                    <option value=" ">01</option>
-                    <option value=" ">02</option>
-                    <option value="otro">03</option>
-                  </select>
-                </div>
-                <div class="col-md-4 col-xs-4">
-                  <select class="form-control">
-                    <option value="">AAAA</option>
-                    <option value=" ">01</option>
-                    <option value=" ">02</option>
-                    <option value="otro">03</option>
-                  </select>
-                </div>
-              </div>
-              <div class="line"></div>
-            </div>
-            <!--Tarjeta de identidad-->
+            <!--Email Input-->
             <div class="form-group">
-              <input type="text" id="tarjetaID" placeholder="Tarjeta de identidad" class="form-control">
-              <div class="line"></div>
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio</span></div>
+              <input type="email" id="email" name="email" placeholder="Email" class="form-control">
             </div>
-            <!--Email-->
+            <!--Password-->
             <div class="form-group">
-              <input type="email" id="email" placeholder="Email" class="form-control">
-              <div class="line"></div>
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio</span></div>
+              <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control">
             </div>
-            <!--Colegio-->
+            <!--Password-->
             <div class="form-group">
-              <select class="form-control">
+              <input type="password" id="Cpass" name="Cpass" placeholder="Confirmar Contraseña" class="form-control">
+            </div>
+            <!--DATE Input-->
+            <div class="form-group">
+              <input type="date" name="fechaNacimiento" id="fechaNacimiento">
+            </div>
+            <!--Number Input-->
+            <div class="form-group">
+              <input type="number" id="tarjetaID" name="tarjetaID" placeholder="Tarjeta de identidad" class="form-control">
+            </div>
+            <!--Select-->
+            <div class="form-group">
+              <select id="Col" name="Col" class="form-control">
                 <option value="">¿De cuál colegio eres?</option>
-                <option value=" ">País 1</option>
-                <option value=" ">País 2</option>
+                <option value="1">País 1</option>
+                <option value="2">País 2</option>
                 <option value="otro">Otro</option>
               </select>
-              <div class="line"></div>
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio</span></div>
             </div>
-            <!--Otro Colegio-->
-            <div class="form-group hidden">
-              <input type="text" id="tarjetaID" placeholder="¿Cuál?" class="form-control">
-              <div class="line"></div>
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio</span></div>
-            </div>
-            <!--Voto Colegio-->
-            <div class="form-group">
-              <select class="form-control">
-                <option value="">¿Por cuál colegio votas?</option>
-                <option value=" ">País 1</option>
-                <option value=" ">País 2</option>
-                <option value="otro">Otro</option>
-              </select>
-              <div class="line"></div>
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio</span></div>
-            </div>
-          </div>
-          <!--Datos acudiente-->
-          <div class="col-md-6 col-xs-12">
-            <h3 class="acudiente-title">Datos de tu acudiente</h3>
-            <!--Nombres-->
-            <div class="form-group">
-              <input type="text" id="name" placeholder="Nombre Completo" class="form-control">
-              <div class="line"></div>
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio</span></div>
-            </div>
-            <!--Parentesco-->
-            <div class="form-group">
-              <input type="text" id="tarjetaID" placeholder="Parentesco" class="form-control">
-              <div class="line"></div>
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio</span></div>
-            </div>
-            <!--Cedula-->
-            <div class="form-group">
-              <input type="text" id="tarjetaID" placeholder="Cédula" class="form-control">
-              <div class="line"></div>
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio</span></div>
-            </div>
-            <!--Email-->
-            <div class="form-group">
-              <input type="email" id="email" placeholder="Email" class="form-control">
-              <div class="line"></div>
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio</span></div>
-            </div>
-            <!--Ciudad-->
-            <div class="form-group">
-              <select class="form-control">
-                <option value="">Ciudad</option>
-                <option value=" ">Ciudad 1</option>
-                <option value=" ">Ciudad 2</option>
-              </select>
-              <div class="line"></div>
-              <div class="error hidden"><span class="mensaje-error">Este campo es obligatorio</span></div>
-            </div>
-            <!--Acepta terminos-->
+            <!--checkbox-->
             <div class="checkbox">
               <input type="checkbox" id="terminos" name="terminos">
-              <label for="terminos">Leo y acepto los <a  data-toggle="modal" data-target="#myModal">términos y condiciones</a></label>
-              <div class="error hidden"><span class="mensaje-error">Debes aceptar los términos y condiciones</span></div>
-            </div>
-            <!--Privacidad-->
-            <div class="checkbox">
-              <input type="checkbox" id="privacidad" name="privacidad">
-              <label for="privacidad">
-                Leo y acepto <a data-toggle="modal" data-target="#ModalPrivacidad">Aviso de privacidad</a>
+              <label for="terminos">
+                Leo y acepto los <a  data-toggle="modal" data-target="#myModal">términos y condiciones</a>
                 
               </label>
-              <div class="error hidden"><span class="mensaje-error">Debes aceptar el aviso de privacidad</span></div>
+            </div>
+            <!--Radio-->
+            <div class="radio">
+              <label>
+                <input type="radio" id="opcion1" name="Radios" value="opcion1">
+                Opcion 1
+                
+              </label>
+              <label>
+                <input type="radio" id="opcion2" name="Radios" value="opcion2">
+                Opcion 2
+                
+              </label>
+            </div>
+            <!--Textarea-->
+            <textarea name="texto" id="texto" class="form-control"></textarea>
+            <!--Range-->
+            <div class="form-group">
+              <output>Aburrida </output>
+              <input type="range" min="0" max="100" value="0" id="rango" name="rango" step="25">
+              <output id="valor">¡Genial!</output>
+            </div>
+            <!--URL-->
+            <div class="form-group">
+              <input type="url" value="direccion" name="url" id="url">
+            </div>
+            <!--File-->
+            <div class="form-group">
+              <input type="file" value="selecciona Archivo" name="archivo" id="archivo">
             </div>
           </div>
         </div>
@@ -162,4 +102,6 @@
       <!--/-Registro-->
     </section>
   </div>
+  <script src="js/libs/jquery.validate.js"></script>
+  <script src="js/validarForm-largo.js"></script>
 </body></html>

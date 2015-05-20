@@ -14,153 +14,78 @@ block content
 			form#Registro(action="post")
 				div.row
 					//Datos
-					div.col-md-6.col-xs-12
-						h3.datos-title Tus Datos
+					div.col-md-12.col-xs-12
 						
 						//Nombres
 						div.form-group
-							input(type="text" class="form-control" id="name" placeholder="Nombre Completo")
-							div.line
-							div.error.hidden
-								span.mensaje-error Este campo es obligatorio
+							input(type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre Completo")
 
-						//Fecha de Nacimiento
-						div.form-group(class="fechaNacimiento")
-							span Fecha de Nacimiento
-							div.row
-								//- div.col-md-3.col-xs-3 <span>Fecha de Nacimiento</span>
-								div.col-md-4.col-xs-4
-									select(class="form-control")
-										option(value="") DD
-										option(value=" ") 01
-										option(value=" ") 02
-										option(value="otro") 03
-
-								div.col-md-4.col-xs-4
-									select(class="form-control")
-										option(value="") MM
-										option(value=" ") 01
-										option(value=" ") 02
-										option(value="otro") 03
-
-								div.col-md-4.col-xs-4
-									select(class="form-control")
-										option(value="") AAAA
-										option(value=" ") 01
-										option(value=" ") 02
-										option(value="otro") 03
-
-							div.line
-
-							
-
-
-						//Tarjeta de identidad
+						//Email Input
 						div.form-group
-							input(type="text" class="form-control" id="tarjetaID" placeholder="Tarjeta de identidad")
-							div.line
-							div.error.hidden
-								span.mensaje-error Este campo es obligatorio
+							input(type="email" class="form-control" id="email" name="email" placeholder="Email")
 
-						//Email
+						//Password
 						div.form-group
-							input(type="email" class="form-control" id="email" placeholder="Email")
-							div.line
-							div.error.hidden
-								span.mensaje-error Este campo es obligatorio
+							input(type="password" class="form-control" id="password" name="password" placeholder="Contraseña")
 
-						//Colegio
+						//Password
 						div.form-group
-							select(class="form-control")
+							input(type="password" class="form-control" id="Cpass" name="Cpass" placeholder="Confirmar Contraseña")
+
+						//DATE Input
+						div.form-group
+							input(type="date" name="fechaNacimiento" id="fechaNacimiento")
+
+						//Number Input
+						div.form-group
+							input(type="number" class="form-control" id="tarjetaID" name="tarjetaID" placeholder="Tarjeta de identidad")
+						
+
+						//Select
+						div.form-group
+							select(class="form-control" id="Col" name="Col")
 								option(value="") ¿De cuál colegio eres?
-								option(value=" ") País 1
-								option(value=" ") País 2
+								option(value="1") País 1
+								option(value="2") País 2
 								option(value="otro") Otro
-							div.line
-							div.error.hidden
-								span.mensaje-error Este campo es obligatorio
-
-						//Otro Colegio
-						div.form-group.hidden
-							input(type="text" class="form-control" id="tarjetaID" placeholder="¿Cuál?")
-							div.line
-							div.error.hidden
-								span.mensaje-error Este campo es obligatorio
-
-
-						//Voto Colegio
-						div.form-group
-							select(class="form-control")
-								option(value="") ¿Por cuál colegio votas?
-								option(value=" ") País 1
-								option(value=" ") País 2
-								option(value="otro") Otro
-							div.line
-							div.error.hidden
-								span.mensaje-error Este campo es obligatorio
-
-
-					//Datos acudiente
-					div.col-md-6.col-xs-12
-						h3.acudiente-title Datos de tu acudiente
-							
-
-						//Nombres
-						div.form-group
-							input(type="text" class="form-control" id="name" placeholder="Nombre Completo")
-							div.line
-							div.error.hidden
-								span.mensaje-error Este campo es obligatorio
-
-						//Parentesco
-						div.form-group
-							input(type="text" class="form-control" id="tarjetaID" placeholder="Parentesco")
-							div.line
-							div.error.hidden
-								span.mensaje-error Este campo es obligatorio
-
-						//Cedula
-						div.form-group
-							input(type="text" class="form-control" id="tarjetaID" placeholder="Cédula")
-							div.line
-							div.error.hidden
-								span.mensaje-error Este campo es obligatorio
-
-						//Email
-						div.form-group
-							input(type="email" class="form-control" id="email" placeholder="Email")
-							div.line
-							div.error.hidden
-								span.mensaje-error Este campo es obligatorio
-
-						//Ciudad
-						div.form-group
-							select(class="form-control")
-								option(value="") Ciudad
-								option(value=" ") Ciudad 1
-								option(value=" ") Ciudad 2
-							div.line
-							div.error.hidden
-								span.mensaje-error Este campo es obligatorio
-						
-						//Acepta terminos
+									
+						//checkbox
 						div.checkbox
 							input(type="checkbox", id="terminos" name="terminos" )
 							//- <input type="checkbox" id="terminos" />
 							label(for="terminos").
 								Leo y acepto los <a  data-toggle="modal" data-target="#myModal">términos y condiciones</a>
-							div.error.hidden
-								span.mensaje-error Debes aceptar los términos y condiciones
 
-						//Privacidad
-						div.checkbox
-							input(type="checkbox", id="privacidad" name="privacidad" )
-							//- span.glyphicon.glyphicon-ok <input type="checkbox" id="privacidad" />
-							label(for="privacidad").
-								Leo y acepto <a data-toggle="modal" data-target="#ModalPrivacidad">Aviso de privacidad</a>
+						//Radio
+						div.radio
 
-							div.error.hidden
-								span.mensaje-error Debes aceptar el aviso de privacidad
+							label.
+								<input type="radio" id="opcion1" name="Radios" value="opcion1">
+								Opcion 1
+
+							label.
+								<input type="radio" id="opcion2" name="Radios" value="opcion2">
+								Opcion 2
+
+						//Textarea
+						textarea.form-control(name="texto" id="texto" )
+
+						//Range
+						div.form-group
+							output Aburrida 
+							input(type="range" min="0" max="100" value="0" id="rango" name="rango" step="25")
+							output#valor ¡Genial!
+
+						//URL
+						div.form-group
+							input(type="url" value="direccion" name="url" id="url" )
+
+
+						//File
+						div.form-group
+							input(type="file" value="selecciona Archivo" name="archivo" id="archivo" )
+							
+							
 
 
 					
@@ -168,3 +93,6 @@ block content
 				button(type="submit" id="Btnregistro") Votar 
 			
 			///-Registro
+block Scripts
+	script(src='js/libs/jquery.validate.js')
+	script(src='js/validarForm-largo.js')
