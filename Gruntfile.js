@@ -72,13 +72,24 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		
+
+		// Minifica el código css
+		cssmin: {
+		      combine: {
+		      files: {
+		        'publication/css/<%= pkg.name %>.min.css': ['publication/css/*.*']
+		      }
+		    }
+		  },
+
 		//Cargamos Jade como template engine//
 		jade: {
 			 compile: {
 					 options: {
-							 client: false,
-							 pretty: true
+							 pretty: true,
+							 data:{
+							 	debug: true //Variable para compilar html con archivos de JS y CSS comprimidos 
+							 }
 					 },
 					 files: [ {
 						 cwd: "publication/jTemplates",
@@ -159,6 +170,7 @@ module.exports = function(grunt) {
 	// Se especifican los plugins que se van a utilizar
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-qunit');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -170,6 +182,7 @@ module.exports = function(grunt) {
 
 	// Se programan las tareas a ejecuar al momento de llamar "grunt %nombretarea%".
 	grunt.registerTask('minificarjs', ['concat','uglify','clean']);
+	grunt.registerTask('minicss', ['cssmin','clean']);
 	grunt.registerTask('csstylus', ['stylus']);
 	grunt.registerTask('template', ['jade']);
 	grunt.registerTask('comando', ['shell:phantom']);
