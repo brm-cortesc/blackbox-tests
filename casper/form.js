@@ -1,17 +1,4 @@
-var url ="http://localhost:3000/registro-base.html";
-
-var casper = require('casper').create({
-    //Imprime errores en consola
-    verbose: true,
-    //Tamaño de la ventana que crea
-    viewportSize: {
-        width: 1300,
-        height: 400
-    }
-
-});
-
-var xpath = require('casper').selectXPath;
+// var url ="http://localhost:3000/registro-base.html";
 
 //Ids del form corto
 // nombre
@@ -19,7 +6,35 @@ var xpath = require('casper').selectXPath;
 // password
 // Cpass
 
-casper.start(url);
+var casper = require('casper').create({
+    //Imprime errores en consola
+    verbose: true,
+    //Tamaño de la ventana
+    viewportSize: {
+        width: 1300,
+        height: 400
+    }
+
+});
+
+
+//Valores para el formulario
+var params = require('./params.json');
+
+//Testeamos que el objeto cargue
+// var utils = require('utils');
+// utils.dump(params["test"])
+// utils.dump(params);
+
+
+// Keys del JSON
+var ide = Object.keys(params);
+
+var xpath = require('casper').selectXPath;
+
+
+casper.start(params.url, function () {
+});
 
 //Hacemos captura antes de llenar
 casper.then(function () {
@@ -31,15 +46,15 @@ casper.then(function () {
 
 //Llenamos el formulario con errores
 casper.then(function() {
-	// Escribe en los campos del formulario.
-    this.sendKeys(xpath('//*[@id="nombre"]'), 'Test');
+    // Escribe en los campos del formulario.
+    this.sendKeys(xpath('//*[@id="'+ide[1]+'"]'), params.nombre);
     // this.capture('screenshots/01-nombre.jpg');
 
-    this.sendKeys(xpath('//*[@id="email"]'), 'cristian.cortes@br,.com.co');
+    this.sendKeys(xpath('//*[@id="'+ide[2]+'"]'), params.email);
     // this.capture('screenshots/02-email.jpg');
-    this.sendKeys(xpath('//*[@id="password"]'), 'lapeorcontraseñadelmundo');
+    this.sendKeys(xpath('//*[@id="'+ide[3]+'"]'), params.password);
     // this.capture('screenshots/03-password.jpg');
-    this.sendKeys(xpath('//*[@id="Cpass"]'), 'lapeorcontraseadelmundo');
+    this.sendKeys(xpath('//*[@id="'+ide[4]+'"]'), params.Cpass);
     // this.capture('screenshots/04-password-confirm.jpg');
     this.click("#Btnregistro");
     //Hacemos captura con errores de formulario
