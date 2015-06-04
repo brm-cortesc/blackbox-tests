@@ -22,8 +22,8 @@ $(document).ready(function(){
 	       Radios: 				{required: true},
 	       texto: 				{required: true, maxlength: 500,},
 	       rango: 				{required: true, range: [1, 100]},
-	       url: 				{required: true, url:true},
-	       archivo: 			{required: true, extension: "jpg|png"}
+	       url: 				{required: true, url:true}
+	       // archivo: 			{required: true, extension: "jpg|png"}
 	       },
 
 	//Mensajes en caso de dar error para cada input
@@ -31,7 +31,7 @@ $(document).ready(function(){
 		nombre: 			{required: "debes ingresar un nombre", accept: "Ingresa solo texto"},
 		email: 				"ingresa un email válido",
 		password: 			"ingresa una contraseña",
-		Cpass: 				"las constraseñas con coinciden",
+		Cpass: 				"las constraseñas no coinciden",
 		fechaNacimiento: 	"No haz seleccionado una fecha",
 		tarjetaID: 			{required: "Indíca un número", digits: "Ingresa solo números" },
 		Col: 				"No haz seleccionado un país",

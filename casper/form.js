@@ -1,11 +1,5 @@
 // var url ="http://localhost:3000/registro-base.html";
 
-//Ids del form corto
-// nombre
-// email
-// password
-// Cpass
-
 var casper = require('casper').create({
     //Imprime errores en consola
     verbose: true,
@@ -46,27 +40,43 @@ casper.then(function () {
 
 //Llenamos el formulario con errores
 casper.then(function() {
-    // Escribe en los campos del formulario.
-    this.sendKeys(xpath('//*[@id="'+ide[1]+'"]'), params.nombre);
-    // this.capture('screenshots/01-nombre.jpg');
 
-    this.sendKeys(xpath('//*[@id="'+ide[2]+'"]'), params.email);
-    // this.capture('screenshots/02-email.jpg');
-    this.sendKeys(xpath('//*[@id="'+ide[3]+'"]'), params.password);
-    // this.capture('screenshots/03-password.jpg');
-    this.sendKeys(xpath('//*[@id="'+ide[4]+'"]'), params.Cpass);
-    // this.capture('screenshots/04-password-confirm.jpg');
-    this.click("#Btnregistro");
-    //Hacemos captura con errores de formulario
+
+    //Llena values de date, y rango
+    this.sendKeys(xpath('//*[@id="fechaNacimiento"]'), params.fechaNacimiento);
+    this.sendKeys(xpath('//*[@id="rango"]'), params.rango);
+
+    // Escribe en los campos del formulario.
+    this.fillXPath('#Registro', {
+
+            '//*[@name="nombre"]': params.tarjetaID,
+            '//*[@name="email"]': "trs",
+            '//*[@name="password"]': params.password,
+            '//*[@name="Cpass"]': params.password+"hola",
+            '//*[@name="tarjetaID"]': params.nombre,
+            '//*[@name="Col"]': params.Col,
+            '//*[@name="terminos"]': params.terminos,
+            '//*[@name="Radios"]': params.Radios,
+            '//*[@name="texto"]': params.texto,
+            '//*[@name="url"]': params.direccion
+
+    }, false);
+
+
+
+    this.click("#Btnregistro"); 
+
     this.capture('screenshots/02-submit-form-errores.jpg');
 });
 
 //Limpiamos los campos que están mal
 casper.then(function () {
 
-    this.fill("#Registro", {
-        "email": "",
-        "Cpass": ""
+    this.fillXPath("#Registro", {
+        '//*[@name="nombre"]': "",
+        '//*[@name="email"]': "",
+        '//*[@name="Cpass"]': "",
+        '//*[@name="tarjetaID"]': ""
 
     });
 
@@ -75,9 +85,14 @@ casper.then(function () {
 //Corregimos los campos que están mal y enviamos datos
 casper.then(function() {
 
-    this.sendKeys(xpath('//*[@id="email"]'), 'cristian.cortes@brm.com.co');
+    this.fillXPath("#Registro",{
 
-    this.sendKeys(xpath('//*[@id="Cpass"]'), 'lapeorcontraseñadelmundo');
+        '//*[@name="nombre"]': params.nombre,
+        '//*[@name="email"]': params.email,
+        '//*[@name="Cpass"]': params.password,
+        '//*[@name="tarjetaID"]': params.tarjetaID
+
+    },false);
 
     this.click("#Btnregistro");
 

@@ -1,7 +1,14 @@
 {
-	"url": "http://localhost:3000/registro-base.html",
+	"url": "http://localhost:3000/registro-largo.html",
 	"nombre": "Test",
-	"email": "cristian.cortes@br,.com.co",
+	"email": "cristian.cortes@brm.com.co",
 	"password": "lapeorcontraseñadelmundo",
-	"Cpass": "lapeorcontraseadelmundo"
+	"fechaNacimiento": "2015-05-06",
+	"tarjetaID": "123456789",
+	"Col": "2",
+	"terminos": true,
+	"Radios": "opcion2",
+	"texto": "Lero lero candelero",
+	"rango": "50",
+	"direccion": "http://prueba.com.co"
 }
