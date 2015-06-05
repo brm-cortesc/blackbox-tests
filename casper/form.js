@@ -15,14 +15,16 @@ var casper = require('casper').create({
 //Valores para el formulario
 var params = require('./params.json');
 
+
+// traemos Keys del JSON
+var ide = Object.keys(params);
+
+var i = 1;
+
 //Testeamos que el objeto cargue
 // var utils = require('utils');
 // utils.dump(params["test"])
 // utils.dump(params);
-
-
-// Keys del JSON
-var ide = Object.keys(params);
 
 var xpath = require('casper').selectXPath;
 
@@ -47,20 +49,37 @@ casper.then(function() {
     this.sendKeys(xpath('//*[@id="rango"]'), params.rango);
 
     // Escribe en los campos del formulario.
-    this.fillXPath('#Registro', {
+    // this.fillXPath('#Registro', {
 
-            '//*[@name="nombre"]': params.tarjetaID,
-            '//*[@name="email"]': "trs",
-            '//*[@name="password"]': params.password,
-            '//*[@name="Cpass"]': params.password+"hola",
-            '//*[@name="tarjetaID"]': params.nombre,
-            '//*[@name="Col"]': params.Col,
-            '//*[@name="terminos"]': params.terminos,
-            '//*[@name="Radios"]': params.Radios,
-            '//*[@name="texto"]': params.texto,
-            '//*[@name="url"]': params.direccion
+    //         '//*[@name="nombre"]': params.tarjetaID,
+    //         '//*[@name="email"]': "trs",
+    //         '//*[@name="password"]': params.password,
+    //         '//*[@name="Cpass"]': params.password+"hola",
+    //         '//*[@name="tarjetaID"]': params.nombre,
+    //         '//*[@name="Col"]': params.Col,
+    //         '//*[@name="terminos"]': params.terminos,
+    //         '//*[@name="Radios"]': params.Radios,
+    //         '//*[@name="texto"]': params.texto,
+    //         '//*[@name="url"]': params.direccion
 
-    }, false);
+    // }, false);
+
+    //Verificamos si existe el elemento y lo llenamos
+    utils.dump(params);
+    this.echo(params.length);
+
+    for (;i < ide.length ; i++){
+
+        if ( this.exists(xpath('//*[@id="'+ide[i]+'"]')) ) {
+
+                
+
+                // casper.echo( i +" "+ ide[i] + " "+ ide[i] );
+                this.sendKeys(xpath('//*[@id="'+ide[i]+'"]'), params);
+
+        };
+    };
+
 
 
 
