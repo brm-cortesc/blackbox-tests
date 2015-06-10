@@ -15,7 +15,6 @@ var casper = require('casper').create({
 //Valores para el formulario
 var params = require('./params.json');
 
-
 // traemos Keys del JSON
 var ide = Object.keys(params);
 
@@ -35,6 +34,7 @@ casper.start(params.url, function () {
 //Hacemos captura antes de llenar
 casper.then(function () {
     this.capture('screenshots/00-submit-form-inicial.jpg');
+
     this.click("#Btnregistro");
     this.capture('screenshots/01-submit-form-vacio.jpg');
     
@@ -49,33 +49,20 @@ casper.then(function() {
     this.sendKeys(xpath('//*[@id="rango"]'), params.rango);
 
     // Escribe en los campos del formulario.
-    // this.fillXPath('#Registro', {
-
-    //         '//*[@name="nombre"]': params.tarjetaID,
-    //         '//*[@name="email"]': "trs",
-    //         '//*[@name="password"]': params.password,
-    //         '//*[@name="Cpass"]': params.password+"hola",
-    //         '//*[@name="tarjetaID"]': params.nombre,
-    //         '//*[@name="Col"]': params.Col,
-    //         '//*[@name="terminos"]': params.terminos,
-    //         '//*[@name="Radios"]': params.Radios,
-    //         '//*[@name="texto"]': params.texto,
-    //         '//*[@name="url"]': params.direccion
-
-    // }, false);
 
     //Verificamos si existe el elemento y lo llenamos
-    utils.dump(params);
-    this.echo(params.length);
+   
 
     for (;i < ide.length ; i++){
 
         if ( this.exists(xpath('//*[@id="'+ide[i]+'"]')) ) {
-
                 
+                casper.echo(i + " " + ide[i] + ": " + params[ide[i]]);
 
-                // casper.echo( i +" "+ ide[i] + " "+ ide[i] );
-                this.sendKeys(xpath('//*[@id="'+ide[i]+'"]'), params);
+                // this.sendKeys(xpath('//*[@id="'+ide[i]+'"]'), params[ide[i]]);       
+
+                //Llenamos los campos completos
+                this.fill("#Registro", params, false);
 
         };
     };
