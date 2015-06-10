@@ -49,9 +49,8 @@ casper.then(function() {
     this.sendKeys(xpath('//*[@id="rango"]'), params.rango);
 
     // Escribe en los campos del formulario.
-
-    //Verificamos si existe el elemento y lo llenamos
-   
+    //Llenamos los campos completos
+    this.fill("#Registro", params, false);   
 
     for (;i < ide.length ; i++){
 
@@ -60,9 +59,6 @@ casper.then(function() {
                 casper.echo(i + " " + ide[i] + ": " + params[ide[i]]);
 
                 // this.sendKeys(xpath('//*[@id="'+ide[i]+'"]'), params[ide[i]]);       
-
-                //Llenamos los campos completos
-                this.fill("#Registro", params, false);
 
         };
     };
