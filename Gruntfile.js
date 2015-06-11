@@ -119,8 +119,8 @@ module.exports = function(grunt) {
 			},
 				//Se utiliza para ejecutar comandos de consola desde el archivo
 		shell: {
-			phantom: {
-				command: 'phantomjs publication/js/phantom/screen.js',
+			casper: {
+				command: 'casperjs casper/form.js',
 				options: {
 						stdout: true
 				},
@@ -185,7 +185,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('minicss', ['cssmin','clean']);
 	grunt.registerTask('csstylus', ['stylus']);
 	grunt.registerTask('template', ['jade']);
-	grunt.registerTask('comando', ['shell:phantom']);
+	grunt.registerTask('comando', ['shell:casper']);
 	grunt.registerTask('git', ['shell:init']);
 	grunt.registerTask('stat', ['shell:stats','shell:add']);
 	grunt.registerTask('observar', ['watch:brm','browserSync']);
