@@ -40,6 +40,11 @@ casper.then(function () {
     
 });
 
+var texto = xpath('//*[@aria-validar="texto"]');
+var numero = xpath('//*[@aria-validar="numeros"]');
+var largo = xpath('//*[@aria-validar="maxlength"]');
+var Cpass = xpath('//*[@aria-validar="Cpass"]');
+
 //Llenamos el formulario con errores
 casper.then(function() {
 
@@ -47,35 +52,53 @@ casper.then(function() {
     //Llena values de date, y rango
     this.sendKeys(xpath('//*[@id="fechaNacimiento"]'), params.fechaNacimiento);
     this.sendKeys(xpath('//*[@id="rango"]'), params.rango);
+    
 
-    // Escribe en los campos del formulario.
-    //Llenamos los campos completos
-    this.fill("#Registro", params, false);   
+    //Llenamos con numeros inputs de texto
+    if( this.exists(texto) ){
 
-    for (;i < ide.length ; i++){
+    this.sendKeys(texto, "123466");
 
-        if ( this.exists(xpath('//*[@id="'+ide[i]+'"]')) ) {
-                
-                casper.echo(i + " " + ide[i] + ": " + params[ide[i]]);
-
-                // this.sendKeys(xpath('//*[@id="'+ide[i]+'"]'), params[ide[i]]);       
-
-        };
     };
 
+    //Llenamos con texto inputs de digitos
+    if ( this.exists (numero) ){
+
+        this.sendKeys(numero, "hlo");
+
+    };
+
+<<<<<<< HEAD
+=======
+    //Validamos máximo de caracteres
+
+    if (  this.exists (largo) ) {
+
+        this.sendKeys(largo, " En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lantejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda. El resto della concluían sayo de velarte, calzas de velludo para las fiestas, con sus pantuflos de lo mesmo, y los días de entresemana se honraba con su vellorí de lo más fino. Tenía en su casa una ama que pasaba de los cuarenta, y una sobrina que no llegaba a los veinte, y un mozo de campo y plaza, que así ensillaba el rocín como tomaba la podadera. Frisaba la edad de nuestro hidalgo con los cincuenta años; era de complexión recia, seco de carnes, enjuto de rostro, gran madrugador y amigo de la caza. Quieren decir que tenía el sobrenombre de Quijada, o Quesada, que en esto hay alguna diferencia en los autores que deste caso escriben; aunque, por conjeturas verosímiles, se deja entender que se llamaba Quejana. Pero esto importa poco a nuestro cuento; basta que en la narración dél no se salga un punto de la verdad.  ")
+    };
+
+    //Validamos email
+
+    if ( this.exists( xpath('//*[@type="email"]') ) ){
+        this.sendKeys( xpath('//*[@type="email"]'), "cris.faas@f" );
+    }
+
+
+>>>>>>> accef7d578dfc5928a341ad2d55199f34a16fa9f
     this.click("#Btnregistro"); 
 
     this.capture('screenshots/02-submit-form-errores.jpg');
 });
 
-//Limpiamos los campos que están mal
+//Limpiamos los campos con error
 casper.then(function () {
 
     this.fillXPath("#Registro", {
-        '//*[@name="nombre"]': "",
-        '//*[@name="email"]': "",
-        '//*[@name="Cpass"]': "",
-        '//*[@name="tarjetaID"]': ""
+        '//*[@aria-validar="texto"]': "",
+        '//*[@aria-validar="numeros"]': "",
+        '//*[@aria-validar="maxlength"]': "",
+        '//*[@type="email"]': "",
+        '//*[@aria-validar="Cpass"]': ""
 
     });
 
@@ -84,14 +107,16 @@ casper.then(function () {
 //Corregimos los campos que están mal y enviamos datos
 casper.then(function() {
 
-    this.fillXPath("#Registro",{
+    //Llenamos de nuevo todo el formulario
+    this.fill("#Registro", params, false);
+    // this.fillXPath("#Registro",{
 
-        '//*[@name="nombre"]': params.nombre,
-        '//*[@name="email"]': params.email,
-        '//*[@name="Cpass"]': params.password,
-        '//*[@name="tarjetaID"]': params.tarjetaID
+    //     '//*[@name="nombre"]': params.nombre,
+    //     '//*[@name="email"]': params.email,
+    //     '//*[@name="Cpass"]': params.password,
+    //     '//*[@name="tarjetaID"]': params.tarjetaID
 
-    },false);
+    // },false);
 
     this.click("#Btnregistro");
 

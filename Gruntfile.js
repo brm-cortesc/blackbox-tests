@@ -120,7 +120,11 @@ module.exports = function(grunt) {
 				//Se utiliza para ejecutar comandos de consola desde el archivo
 		shell: {
 			casper: {
+<<<<<<< HEAD
 				command: 'casperjs casper/form.js',
+=======
+				command: 'casperjs casperjs/form.js',
+>>>>>>> accef7d578dfc5928a341ad2d55199f34a16fa9f
 				options: {
 						stdout: true
 				},

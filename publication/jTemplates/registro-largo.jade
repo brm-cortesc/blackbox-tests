@@ -18,7 +18,7 @@ block content
 						
 						//Nombres
 						div.form-group
-							input(type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre Completo")
+							input(type="text" aria-validar="texto" class="form-control" id="nombre" name="nombre" placeholder="Nombre Completo")
 
 						//Email Input
 						div.form-group
@@ -30,7 +30,7 @@ block content
 
 						//Password
 						div.form-group
-							input(type="password" class="form-control" id="Cpass" name="Cpass" placeholder="Confirmar Contraseña")
+							input(type="password" class="form-control" aria-validar="Cpass" id="Cpass" name="Cpass" placeholder="Confirmar Contraseña")
 
 						//DATE Input
 						div.form-group
@@ -38,7 +38,7 @@ block content
 
 						//Number Input
 						div.form-group
-							input(type="text" class="form-control" id="tarjetaID" name="tarjetaID" placeholder="Tarjeta de identidad")
+							input(type="text" aria-validar="numeros" class="form-control" id="tarjetaID" name="tarjetaID" placeholder="Tarjeta de identidad")
 						
 
 						//Select
@@ -68,7 +68,7 @@ block content
 								Opcion 2
 
 						//Textarea
-						textarea.form-control(name="texto" id="texto" )
+						textarea.form-control(name="texto" aria-validar="maxlength" id="texto" )
 
 						//Range
 						div.form-group
@@ -78,10 +78,7 @@ block content
 
 						//URL
 						div.form-group
-							input(type="url" value="direccion" name="direccion" id="url" )
-					
-						div.form-group
-							input.hidden(type="url" value="url" name="url" id="url" )
+							input(type="url" value="direccion" name="url" id="url" )
 
 
 						//File
