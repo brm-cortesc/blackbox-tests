@@ -68,8 +68,6 @@ casper.then(function() {
 
     };
 
-<<<<<<< HEAD
-=======
     //Validamos máximo de caracteres
 
     if (  this.exists (largo) ) {
@@ -83,8 +81,6 @@ casper.then(function() {
         this.sendKeys( xpath('//*[@type="email"]'), "cris.faas@f" );
     }
 
-
->>>>>>> accef7d578dfc5928a341ad2d55199f34a16fa9f
     this.click("#Btnregistro"); 
 
     this.capture('screenshots/02-submit-form-errores.jpg');
@@ -109,14 +105,7 @@ casper.then(function() {
 
     //Llenamos de nuevo todo el formulario
     this.fill("#Registro", params, false);
-    // this.fillXPath("#Registro",{
 
-    //     '//*[@name="nombre"]': params.nombre,
-    //     '//*[@name="email"]': params.email,
-    //     '//*[@name="Cpass"]': params.password,
-    //     '//*[@name="tarjetaID"]': params.tarjetaID
-
-    // },false);
 
     this.click("#Btnregistro");
 
