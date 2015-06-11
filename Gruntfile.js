@@ -119,8 +119,8 @@ module.exports = function(grunt) {
 			},
 				//Se utiliza para ejecutar comandos de consola desde el archivo
 		shell: {
-			phantom: {
-				command: 'phantomjs publication/js/phantom/screen.js',
+			casper: {
+				command: 'casperjs casperjs/form.js',
 				options: {
 						stdout: true
 				},
