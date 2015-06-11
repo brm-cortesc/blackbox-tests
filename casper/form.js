@@ -63,9 +63,6 @@ casper.then(function() {
         };
     };
 
-
-
-
     this.click("#Btnregistro"); 
 
     this.capture('screenshots/02-submit-form-errores.jpg');
