@@ -34,7 +34,7 @@ block content
 
 						//DATE Input
 						div.form-group
-							input(type="date" name="fechaNacimiento" id="fechaNacimiento")
+							input(type="date" aria-validar="fecha" name="fecha" id="fecha")
 
 						//Number Input
 						div.form-group
@@ -73,12 +73,12 @@ block content
 						//Range
 						div.form-group
 							output Aburrida 
-							input(type="range" min="0" max="100" value="0" id="rango" name="rango" step="25")
+							input(type="range" aria-validar="rango" min="0" max="100" value="0" id="rango" name="rango" step="25")
 							output#valor ¡Genial!
 
 						//URL
 						div.form-group
-							input(type="url" value="direccion" name="url" id="url" )
+							input(type="url" aria-validar="url" value="direccion" name="url" id="url" )
 
 
 						//File

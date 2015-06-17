@@ -185,7 +185,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('minicss', ['cssmin','clean']);
 	grunt.registerTask('csstylus', ['stylus']);
 	grunt.registerTask('template', ['jade']);
-	grunt.registerTask('comando', ['shell:casper']);
+	grunt.registerTask('casper', ['shell:casper']);
 	grunt.registerTask('git', ['shell:init']);
 	grunt.registerTask('stat', ['shell:stats','shell:add']);
 	grunt.registerTask('observar', ['watch:brm','browserSync']);

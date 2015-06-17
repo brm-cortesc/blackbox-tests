@@ -3,7 +3,7 @@
 	"nombre": "Test",
 	"email": "cristian.cortes@brm.com.co",
 	"password": "lapeorcontraseñadelmundo",
-	"fechaNacimiento": "2015-05-06",
+	"fecha": "2015-05-06",
 	"tarjetaID": "123456789",
 	"Col": "2",
 	"terminos": true,
