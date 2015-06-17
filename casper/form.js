@@ -137,6 +137,7 @@ casper.then(function() {
 
 casper.then(function () {
     this.wait(5000, function() {
+            this.clear();
             this.echo("5s");
              casper.thenOpen("http://localhost:3000/respuesta.html", function() {
             this.capture('screenshots/04-submit-form-respuesta-server.jpg');
