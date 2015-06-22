@@ -170,20 +170,13 @@ module.exports = function(grunt) {
 	// Se especifican los plugins que se van a utilizar
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-qunit');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-browser-sync');
-	grunt.loadNpmTasks('grunt-contrib-stylus');
 
 	// Se programan las tareas a ejecuar al momento de llamar "grunt %nombretarea%".
-	grunt.registerTask('minificarjs', ['concat','uglify','clean']);
-	grunt.registerTask('minicss', ['cssmin','clean']);
-	grunt.registerTask('csstylus', ['stylus']);
 	grunt.registerTask('template', ['jade']);
 	grunt.registerTask('casper', ['shell:casper']);
 	grunt.registerTask('git', ['shell:init']);
