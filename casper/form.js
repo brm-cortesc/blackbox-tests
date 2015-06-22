@@ -43,7 +43,7 @@ casper.then(function () {
 var texto = xpath('//*[@aria-validar="texto"]');
 var numero = xpath('//*[@aria-validar="numeros"]');
 var largo = xpath('//*[@aria-validar="maxlength"]');
-var Cpass = xpath('//*[@aria-validar="Cpass"]');
+var Cpass = xpath('//*[@aria-validar="confirmar-password"]');
 
 //Llenamos el formulario con errores
 casper.then(function() {
@@ -97,7 +97,7 @@ casper.then(function () {
         '//*[@aria-validar="numeros"]': "",
         '//*[@aria-validar="maxlength"]': "",
         '//*[@type="email"]': "",
-        '//*[@aria-validar="Cpass"]': ""
+        '//*[@aria-validar="confirmar-password"]': ""
 
     });
 
