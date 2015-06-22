@@ -144,7 +144,7 @@ casper.then(function () {
        //      this.capture('screenshots/04-submit-form-respuesta-server.jpg');
        // });
             this.echo('Page url is ' + this.getCurrentUrl());
-            this.echo('Page title is ' + this.getTitle());
+            this.echo("Prueba terminada");
         
         });
 
