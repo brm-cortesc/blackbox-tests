@@ -10,6 +10,7 @@ foreach ($varPost as $key => $value) {
     $registro->$key = $value;
   }
 }
+$registro->fechaRegistro =  date("Y-m-d"); 
 try{
   $conexion->guardaRegistro((array)$registro);
 }catch(PDOException $e){

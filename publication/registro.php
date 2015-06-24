@@ -23,4 +23,5 @@ class registro {
   public $texto;
   public $rango;
   public $url;
+  public $fechaRegistro;
 }

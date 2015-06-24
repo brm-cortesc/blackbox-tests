@@ -59,7 +59,7 @@ class conexionDB {
   }
 
   function guardaRegistro($registro){
-    $sql = $this->conex->prepare("INSERT INTO registro (id, nombre, email, password, fecha, tarjetaID, Col, terminos, Radios, texto, rango, url, fechaRegistro) VALUES (NULL, :nombre, :email, :password, :fecha, :tarjetaID, :Col, :terminos, :Radios, :texto, :rango, :url, ".date('Y-m-d').")");
+    $sql = $this->conex->prepare("INSERT INTO registro (id, nombre, email, password, fecha, tarjetaID, Col, terminos, Radios, texto, rango, url, fechaRegistro) VALUES (NULL, :nombre, :email, :password, :fecha, :tarjetaID, :Col, :terminos, :Radios, :texto, :rango, :url,:fechaRegistro)");
     $sql->execute($registro);
   }
 
