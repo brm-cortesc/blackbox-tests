@@ -2,104 +2,125 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-  <title>Registro largo</title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/main.css">
-  <!-- Font-->
-  <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,400,700,300" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
-  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  <script src="js/libs/modernizr-2.6.2.min.js"></script>
-  <script src="js/libs/jquery.js"></script>
-</head>
-<body>
-  <!--Contenido-->
-  <div class="container-fluid">
-    <section>
-      <!--Registro-->
-      <form id="Registro" method="post">
-        <div class="row">
-          <!--Datos-->
-          <div class="col-md-12 col-xs-12">
-            <!--Nombres-->
-            <div class="form-group">
-              <input type="text" aria-validar="texto" id="nombre" name="nombre" placeholder="Nombre Completo" class="form-control">
+  <head>
+    <title>Registro largo</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Font-->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,400,700,300" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="js/libs/modernizr-2.6.2.min.js"></script>
+    <script src="js/libs/jquery.js"></script>
+    <style type="text/css">
+
+      #mensajeAlert{
+        color:#000;
+        font-weight: bold;
+      }
+      #cerrar{
+        border: none;
+        background: #1BBCE2;
+        color: #060000;
+        padding: 8px;
+        font-size: 14px;
+        border-radius: 6px;
+        position: relative;
+        box-sizing: border-box;
+        font-weight: bold;
+        transition: all 500ms ease;
+
+      }
+    </style>
+  </head>
+  <body>
+    <!--Contenido-->
+    <div class="container-fluid">
+      <section>
+        <!--Registro-->
+        <form id="Registro" method="post">
+          <div class="row">
+            <!--Datos-->
+            <div class="col-md-12 col-xs-12">
+              <!--Nombres-->
+              <div class="form-group">
+                <input type="text" aria-validar="texto" id="nombre" name="nombre" placeholder="Nombre Completo" class="form-control">
+              </div>
+              <!--Email Input-->
+              <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email" class="form-control">
+              </div>
+              <!--Password-->
+              <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control">
+              </div>
+              <!--Password-->
+              <div class="form-group">
+                <input type="password" aria-validar="confirmar-password" id="Cpass" name="Cpass" placeholder="Confirmar Contraseña" class="form-control">
+              </div>
+              <!--DATE Input-->
+              <div class="form-group">
+                <input type="date" aria-validar="fecha" name="fecha" id="fecha">
+              </div>
+              <!--Number Input-->
+              <div class="form-group">
+                <input type="text" aria-validar="numeros" id="tarjetaID" name="tarjetaID" placeholder="Tarjeta de identidad" class="form-control">
+              </div>
+              <!--Select-->
+              <div class="form-group">
+                <select id="Col" name="Col" class="form-control">
+                  <option value="">¿De cuál colegio eres?</option>
+                  <option value="1">País 1</option>
+                  <option value="2">País 2</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+              <!--checkbox-->
+              <div class="checkbox">
+                <input type="checkbox" value="S" id="terminos" name="terminos">
+                <label id="auth" for="terminos">
+                  Leo y acepto los <a  data-toggle="modal" data-target="#myModal">términos y condiciones</a>
+
+                </label>
+              </div>
+              <!--Radio-->
+              <div class="radio">
+                <label>
+                  <input type="radio" id="opcion1" name="Radios" value="opcion1">
+                  Opcion 1
+
+                </label>
+                <label>
+                  <input type="radio" id="opcion2" name="Radios" value="opcion2">
+                  Opcion 2
+
+                </label>
+              </div>
+              <!--Textarea-->
+              <textarea name="texto" aria-validar="maxlength" id="texto" class="form-control"></textarea>
+              <!--Range-->
+              <div class="form-group">
+                <output>Aburrida </output>
+                <input type="range" aria-validar="rango" min="0" max="100" value="0" id="rango" name="rango" step="25">
+                <output id="valor">¡Genial!</output>
+              </div>
+              <!--URL-->
+              <div class="form-group">
+                <input type="url" aria-validar="url" value="direccion" name="url" id="url">
+              </div>
+              <!--File-->
             </div>
-            <!--Email Input-->
-            <div class="form-group">
-              <input type="email" id="email" name="email" placeholder="Email" class="form-control">
-            </div>
-            <!--Password-->
-            <div class="form-group">
-              <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control">
-            </div>
-            <!--Password-->
-            <div class="form-group">
-              <input type="password" aria-validar="confirmar-password" id="Cpass" name="Cpass" placeholder="Confirmar Contraseña" class="form-control">
-            </div>
-            <!--DATE Input-->
-            <div class="form-group">
-              <input type="date" aria-validar="fecha" name="fecha" id="fecha">
-            </div>
-            <!--Number Input-->
-            <div class="form-group">
-              <input type="text" aria-validar="numeros" id="tarjetaID" name="tarjetaID" placeholder="Tarjeta de identidad" class="form-control">
-            </div>
-            <!--Select-->
-            <div class="form-group">
-              <select id="Col" name="Col" class="form-control">
-                <option value="">¿De cuál colegio eres?</option>
-                <option value="1">País 1</option>
-                <option value="2">País 2</option>
-                <option value="otro">Otro</option>
-              </select>
-            </div>
-            <!--checkbox-->
-            <div class="checkbox">
-              <input type="checkbox" value="S" id="terminos" name="terminos">
-              <label id="auth" for="terminos">
-                Leo y acepto los <a  data-toggle="modal" data-target="#myModal">términos y condiciones</a>
-                
-              </label>
-            </div>
-            <!--Radio-->
-            <div class="radio">
-              <label>
-                <input type="radio" id="opcion1" name="Radios" value="opcion1">
-                Opcion 1
-                
-              </label>
-              <label>
-                <input type="radio" id="opcion2" name="Radios" value="opcion2">
-                Opcion 2
-                
-              </label>
-            </div>
-            <!--Textarea-->
-            <textarea name="texto" aria-validar="maxlength" id="texto" class="form-control"></textarea>
-            <!--Range-->
-            <div class="form-group">
-              <output>Aburrida </output>
-              <input type="range" aria-validar="rango" min="0" max="100" value="0" id="rango" name="rango" step="25">
-              <output id="valor">¡Genial!</output>
-            </div>
-            <!--URL-->
-            <div class="form-group">
-              <input type="url" aria-validar="url" value="direccion" name="url" id="url">
-            </div>
-            <!--File-->
           </div>
-        </div>
-        <button type="button" id="Btnregistro">Votar </button>
-      </form>
-      <!--/-Registro-->
-    </section>
-  </div>
-  <script src="js/libs/jquery.validate.js"></script>
-  <script src="js/validarForm.js"></script>
-  <script src="js/funciones.js"></script>
-</body></html>
+          <button type="button" id="Btnregistro">Votar </button>
+        </form>
+        <!--/-Registro-->
+      </section>
+    </div>
+    <script src="js/libs/jquery.validate.js"></script>
+    <script src="js/validarForm.js"></script>
+    <script src="js/blockUI.js"></script>
+    <script src="js/funciones.js"></script>
+  </body></html>
