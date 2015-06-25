@@ -1,5 +1,5 @@
 {
-	"url": "http://localhost:3000/registro-largo.html",
+	"url": "http://localhost:8080/blackbox-tests/publication/registro-largo.html",
 	"nombre": "Test",
 	"email": "cristian.cortes@brm.com.co",
 	"password": "lapeorcontraseñadelmundo",

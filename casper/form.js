@@ -1,6 +1,6 @@
 // var url ="http://localhost:3000/registro-base.html";
 
-var casper = require('casper').create({
+/* var casper = require('casper').create({
     //Imprime errores en consola
     verbose: true,
     //Tamaño de la ventana
@@ -9,6 +9,30 @@ var casper = require('casper').create({
         height: 400
     }
 
+});
+ */
+
+var casper = require('casper').create({
+   verbose: true,
+   //security=no,
+   //logLevel: "debug",
+   clientScripts: ["C:\/xampp\/htdocs\/blackbox-tests\/publication\/js\/blockUI.js"],
+   viewportSize: {
+       width: 1300,
+       height: 700
+   },
+    
+   waitTimeout: 300000,
+   //timeout: 40000,
+   //stepTimeout: 38000,
+    pageSettings: {
+       javascriptEnabled: true,
+       loadImages: true,
+       loadPlugins: true,
+       localToRemoteUrlAccessEnabled: false,
+           userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.48 Safari/537.36'
+       },
+       //clientScripts: ['/home/cristian/Documentos/casper/js/vendor/jquery.js','/home/cristian/Documentos/casper/js/satelliteLib-039a9c14f39837d1d9cd94e1943c468b85adb800.js','/home/cristian/Documentos/casper/js/lang.js','/home/cristian/Documentos/casper/js/locale.js','/home/cristian/Documentos/casper/js/libs-built.js']
 });
 
 
@@ -128,16 +152,16 @@ casper.then(function() {
     //Hacemos captura con formulario exitoso
 
     this.capture('screenshots/03-submit-form-corregido.jpg');
-
+		
+		
 
 
 });
 
     //Esperamos respuesta de servidor e imprimimos.
-
-casper.then(function () {
-    this.wait(5000, function() {
-            this.capture('screenshots/04-submit-form-respuesta-server.jpg');
+		
+casper.thenOpen("http://localhost:8080/blackbox-tests/publication/respuesta.html", function (){
+	this.capture('screenshots/04-submit-form-respuesta-server.jpg');
        //      this.clear();
        //      this.echo("5s");
        //       casper.thenOpen("http://localhost:3000/respuesta.html", function() {
@@ -146,9 +170,12 @@ casper.then(function () {
             this.echo('Page url is ' + this.getCurrentUrl());
             this.echo("Prueba terminada");
         
-        });
 
-});
+} );
+            
+
+
+
 
 
 casper.run();

@@ -18,7 +18,7 @@ $(document).ready(function () {
       $.unblockUI();
     });
   };
-  $("#Btnregistro").click(function () {
+  $("#Registro").submit(function () {
     if($("#Registro").valid()){
       $.ajax({
         url: "guardaRegistro.php",
@@ -26,9 +26,9 @@ $(document).ready(function () {
         data: $("#Registro").serialize()
       }).success(function (data) {
         if(data==="registroOk"){
-          alerta("Registro guardado con éxito");
+          alert("Registro guardado con éxito");
         }else{
-          alerta("Error al guardar el registro");
+          alert("Error al guardar el registro");
         }
       });
     }
