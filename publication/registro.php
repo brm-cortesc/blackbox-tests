@@ -7,9 +7,8 @@
  */
 
 /**
- * Description of registro
- *
- * @author AndresV
+ * @author Fabian Andres Benavides Valencia
+ * @author Cristian Camilo Cortés Pulido
  */
 class registro {
   public $nombre;

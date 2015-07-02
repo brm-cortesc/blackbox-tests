@@ -1,15 +1,6 @@
-// var url ="http://localhost:3000/registro-base.html";
-
-/* var casper = require('casper').create({
-    //Imprime errores en consola
-    verbose: true,
-    //Tamaño de la ventana
-    viewportSize: {
-        width: 1300,
-        height: 400
-    }
-
-});
+/**
+ * @author Fabian Andres Benavides Valencia
+ * @author Cristian Camilo Cortés Pulido
  */
 
 var casper = require('casper').create({
@@ -64,18 +55,18 @@ casper.then(function () {
     
 });
 
-var texto = xpath('//*[@aria-validar="texto"]');
-var numero = xpath('//*[@aria-validar="numeros"]');
-var largo = xpath('//*[@aria-validar="maxlength"]');
-var Cpass = xpath('//*[@aria-validar="confirmar-password"]');
+var texto = xpath('//*[@data-validar="texto"]');
+var numero = xpath('//*[@data-validar="numeros"]');
+var largo = xpath('//*[@data-validar="maxlength"]');
+var Cpass = xpath('//*[@data-validar="confirmar-password"]');
 
 //Llenamos el formulario con errores
 casper.then(function() {
 
 
     //Llena values de date, y rango
-    this.sendKeys(xpath('//*[@aria-validar="fecha"]'), params.fechaNacimiento);
-    this.sendKeys(xpath('//*[@aria-validar="rango"]'), params.rango);
+    this.sendKeys(xpath('//*[@data-validar="fecha"]'), params.fechaNacimiento);
+    this.sendKeys(xpath('//*[@data-validar="rango"]'), params.rango);
     
 
     //Llenamos con numeros inputs de texto
@@ -117,11 +108,11 @@ casper.then(function() {
 casper.then(function () {
 
     this.fillXPath("#Registro", {
-        '//*[@aria-validar="texto"]': "",
-        '//*[@aria-validar="numeros"]': "",
-        '//*[@aria-validar="maxlength"]': "",
+        '//*[@data-validar="texto"]': "",
+        '//*[@data-validar="numeros"]': "",
+        '//*[@data-validar="maxlength"]': "",
         '//*[@type="email"]': "",
-        '//*[@aria-validar="confirmar-password"]': ""
+        '//*[@data-validar="confirmar-password"]': ""
 
     });
 
@@ -140,11 +131,11 @@ casper.then(function() {
 
     //Corregimos URL
     this.fillXPath("#Registro", {
-        '//*[@aria-validar="url"]': ""
+        '//*[@data-validar="url"]': ""
 
     });
 
-    this.sendKeys(xpath('//*[@aria-validar="url"]'), "http://prueba.com");
+    this.sendKeys(xpath('//*[@data-validar="url"]'), "http://prueba.com");
 
 
     this.click("#Btnregistro");

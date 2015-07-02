@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author Fabian Andres Benavides Valencia
+ * @author Cristian Camilo Cortés Pulido
+ */
 include './conexionDB.php';
 include './registro.php';
 $conexion = new conexionDB("localhost","root","", "cajanegra");

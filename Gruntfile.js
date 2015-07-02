@@ -1,3 +1,7 @@
+/**
+ * @author Fabian Andres Benavides Valencia
+ * @author Cristian Camilo Cortés Pulido
+ */
 'use strict';
 /*Indica a grunt que es un archivo que contiene tareas a ejecutar*/
 module.exports = function(grunt) {
