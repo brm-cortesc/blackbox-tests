@@ -1,7 +1,7 @@
 <?php
 include './conexionDB.php';
 include './registro.php';
-$conexion = new conexionDB("localhost","root","1nt3r4ct1v3", "cajanegra");
+$conexion = new conexionDB("localhost","root","", "cajanegra");
 $varPost = filter_input_array(INPUT_POST);
 $registro = new registro();
 $estadoRegistro = "registroOk";

@@ -11,6 +11,7 @@ Esta herramienta escrita en Javascript, automatiza pruebas de validación de for
 - [Python](https://www.python.org/) 2.6
 
 ##Instalación
+Lo primero que debe hacer es clonar este repositori en su equipo para poder realizar las pruebas localmente
 ```Javascript
 npm install
 ```
