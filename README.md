@@ -36,10 +36,10 @@ npm install
 
 Para validar el formulario se usa el plug-in jquery-validate.js.
 para implementar este plugin se creo el archivo **validarForm.js** dentro del directorio js que se encuentra dentro del directorio publicacion.
-    -En el archivo **validarForm.js** se configura el parametro **rules** en el cual se ponen los nombres (atributo **name**) de los campos del formulario que son requeridos.
-    -Luego se configura el parametro **messages** para elegir los mesajes que salen en cada campo requerido.
-    -En el parametro **errorPlacement** se puede configurar la ubicacion del mensaje de error.
-    -Los parmetros **errorElement** y **errorClass** son para asignar el elemento donde se va a mostrar el mensaje de error y la clase de ese elemento.
+    - En el archivo **validarForm.js** se configura el parametro **rules** en el cual se ponen los nombres (atributo **name**) de los campos del formulario que son requeridos.
+    - Luego se configura el parametro **messages** para elegir los mesajes que salen en cada campo requerido.
+    - En el parametro **errorPlacement** se puede configurar la ubicacion del mensaje de error.
+    - Los parmetros **errorElement** y **errorClass** son para asignar el elemento donde se va a mostrar el mensaje de error y la clase de ese elemento.
 
 ##Uso
 1. Se enciende el servidor
