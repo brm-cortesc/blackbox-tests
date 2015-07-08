@@ -11,7 +11,8 @@ Esta herramienta escrita en Javascript, automatiza pruebas de validación de for
 - [Python](https://www.python.org/) 2.6
 
 ##Instalación
-Lo primero que debe hacer es clonar este repositorio en su equipo para poder realizar las pruebas localmente
+1. Lo primero que debe hacer es clonar este repositorio en su equipo para poder realizar las pruebas localmente.
+2. Luego se abre la consola de node.js se ubica la carpera donde se clono el repositori y se ejecuta el siguiente comando para descagar las librerias necesarias.
 ```Javascript
 npm install
 ```
