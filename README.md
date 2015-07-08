@@ -42,7 +42,7 @@ npm install
     - Los parmetros **errorElement** y **errorClass** son para asignar el elemento donde se va a mostrar el mensaje de error y la clase de ese elemento.
 
 ##Uso
-1. Se enciende el servidor
+1. Se enciende el servidor desde node.js
     ```Javascript
     grunt
     ```
